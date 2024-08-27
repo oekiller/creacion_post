@@ -1,0 +1,368 @@
+/* Este archivo CSS define el estilo de una interfaz similar, 
+incluyendo estilos para el cuerpo, la alimentación de post, 
+cajas de post, publicaciones, widgets y efectos hover para mejorar 
+la experiencia del usuario. Se utilizan variables CSS para los colores 
+y se implementan diseños flexibles para una mejor adaptabilidad. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --twitter-color: #50b7f5;
+  /* --twitter-background: #e6ecf0; */
+  --twitter-i: #2E4053;
+  font-family: "Inconsolata", monospace;
+}
+
+body {
+  /* display: flex; */
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 339px;
+  background-color: rgb(248, 249, 249);
+}
+
+/* feed */
+.feed {
+  flex: 0.5;
+  border-right: 1px solid var(--twitter-background);
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.feed__header {
+  position: sticky;
+  top: 0;
+  background-color: rgb(248, 249, 249);
+  z-index: 100;
+  padding: 15px 20px;
+}
+
+.feed__header h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* tweet box */
+.tweetbox__input img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.tweetBox {
+  padding-bottom: 10px;
+  border-bottom: 8px solid var(--twitter-background);
+  padding-right: 10px;
+}
+
+.tweetBox form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 20px;
+  height: auto;
+  padding: 0;
+}
+
+.tweetbox__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  padding-right: 20px;
+  border-top: 1px solid #e1e8ed;
+  /* Ajusta el color según el diseño */
+  height: auto;
+  /* Permite que la altura se ajuste automáticamente */
+  margin-bottom: 21px;
+}
+
+.tweetbox__input {
+  display: flex;
+  padding: 20px;
+  flex: 1;
+  /* Permite que el input ocupe el espacio disponible */
+}
+
+.tweetbox__input textarea {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: 1px solid;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  resize: vertical;
+  overflow: auto;
+  box-sizing: border-box;
+  resize: none; /* Impide el redimensionamiento manual */
+  transition: height 0.5s ease; /* Transición suave para el cambio de altura */
+}
+
+.tweetbox__input textarea.expanded {
+  height: 100px; /* Ajusta esta altura según tus necesidades */
+}
+
+.tweetbox__input textarea:hover {
+  background-color: #e1f5fe;
+}
+
+.opciones {
+  margin-left: 20px;
+  display: inline-block;
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  padding: 13px;
+}
+
+.tweetBox__tweetButton {
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* post */
+.post__avatar img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.post {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--twitter-background);
+  padding-bottom: 10px;
+}
+
+.post__body img {
+  width: 450px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post__badge {
+  font-size: 14px !important;
+  color: var(--twitter-color);
+  margin-right: 5px;
+}
+
+.post__headerSpecial {
+  font-weight: 600;
+  font-size: 12px;
+  color: gray;
+}
+
+.post__headerText h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.post__headerDescription {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.post__body {
+  flex: 1;
+  padding: 10px;
+}
+
+.post__avatar {
+  padding: 20px;
+}
+
+/* widgets */
+.widgets {
+  flex: 0.3;
+}
+
+.widgets__input {
+  display: flex;
+  align-items: center;
+  background-color: var(--twitter-background);
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.widgets__input input {
+  border: none;
+  background-color: var(--twitter-background);
+}
+
+.widgets__searchIcon {
+  color: gray;
+}
+
+.widgets__widgetContainer {
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+}
+
+.widgets__widgetContainer h2 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.tweetbox__media {
+  display: flex;
+}
+
+.tweetbox__media {
+  display: flex;
+  align-items: center;
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  border-radius: 30px;
+  width: 199px;
+  height: 40px;
+  margin-right: 23px;
+}
+
+.inputs {
+  display: flex;
+  margin-left: 27px;
+  margin-top: 2px;
+}
+
+.inputs label {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+h3 {
+  margin-left: auto;
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 55px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: -220%;
+  /* Coloca el tooltip arriba del elemento */
+  left: 50%;
+  margin-left: -60px;
+  /* Usa el margen negativo para centrar */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Efecto hover para los inputs */
+.tweetbox__input input:hover {
+  background-color: #e1f5fe;
+  /* Cambia el color de fondo cuando se pasa el mouse */
+  border-color: var(--twitter-color);
+  /* Cambia el color del borde */
+  box-shadow: 0px 0px 8px rgba(80, 183, 245, 0.5);
+  /* Agrega un efecto de sombra */
+}
+
+/* Efecto hover para el select */
+.opciones:hover {
+  background-color: #82cfff;
+  /* Cambia el color de fondo cuando se pasa el mouse */
+  box-shadow: 0px 0px 8px rgba(80, 183, 245, 0.5);
+  /* Agrega un efecto de sombra */
+}
+
+/* Efecto hover para el botón */
+.tweetBox__tweetButton:hover {
+  background-color: #82cfff;
+  /* Cambia el color de fondo cuando se pasa el mouse */
+  box-shadow: 0px 0px 8px rgba(80, 183, 245, 0.5);
+  /* Agrega un efecto de sombra */
+}
+
+/* Efecto hover para los iconos <i> */
+.inputs i:hover {
+  color: var(--twitter-i);
+  /* Cambia el color del ícono cuando se pasa el mouse */
+  transform: scale(1.2);
+  /* Escala el ícono ligeramente */
+  transition: transform 0.3s, color 0.3s;
+  /* Añade una transición suave */
+}
+
+/* Efecto hover para el input asociado */
+.inputs label:hover i {
+  color: var(--twitter-i);
+  /* Cambia el color del ícono cuando se pasa el mouse por el label */
+  transform: scale(1.2);
+  /* Escala el ícono ligeramente */
+  transition: transform 0.3s, color 0.3s;
+  /* Añade una transición suave */
+}
+
+.hidden {
+  display: none;
+}
+
+.tweetbox__footer select,
+.tweetBox__tweetButton {
+  margin-left: 20px;
+}
+
+
+.emoji-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* Ajusta el tamaño según tu preferencia */
+  color: #555; /* Cambia el color según tu diseño */
+  margin-left: 10px;
+}

@@ -1,0 +1,105 @@
+<!-- 
+Este archivo HTML representa una interfaz de usuario para una aplicación llamada KlipWall. 
+Contiene un formulario para publicar contenido, permitiendo a los usuarios agregar imágenes, 
+audios y videos. También incluye un área para mostrar publicaciones con opciones de privacidad. 
+El diseño utiliza Font Awesome para los íconos y Google Fonts para la tipografía.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>creacion de post</title>
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+  <script src="js/funciones.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+</head>
+
+<body>
+  <!-- sidebar ends -->
+  <!-- feed starts -->
+  <div class="feed">
+    <div class="feed__header">
+      <h2>KlipWall</h2>
+    </div>
+    <!-- tweetbox starts -->
+    <div class="tweetBox">
+      <form>
+        <div class="tweetbox__input" id="contenedor-todo">
+          <img src="img/user.png" alt="" />
+          <textarea id="input-post" class="input-post" type="text" placeholder="Postea algo?"
+            style="padding-left: 10px;"></textarea>
+        </div>
+        <div class="tweetbox__footer">
+          <div class="tweetbox__media">
+            <h3>Agregar</h3>
+            <div class="inputs">
+              <label for="image-upload" class="tooltip">
+                <i class="fa-solid fa-image">
+                  <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                </i>
+                <span class="tooltiptext">Photo</span>
+              </label>
+              <label for="video-upload" class="tooltip">
+                <i class="fa-solid fa-video">
+                  <input type="file" id="video-upload" accept="video/*" style="display: none;">
+                </i>
+                <span class="tooltiptext">Video</span>
+              </label>
+              <label for="audio-upload" class="tooltip">
+                <i class="fa-solid fa-file-audio">
+                  <input type="file" id="audio-upload" accept="audio/*" style="display: none;">
+                </i>
+                <span class="tooltiptext">Voice</span>
+              </label>
+            </div>
+          </div>
+          <select class="opciones" id="opciones" name="opciones">
+            <option value="opcion1"> Público</option>
+            <option value="opcion2"> Privado</option>
+            <option value="opcion3"> Solo para mí</option>
+          </select>
+          <div class="boton">
+            <button type="submit" class="tweetBox__tweetButton">Post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="post hidden" id="post-container">
+      <div class="post__avatar">
+        <img src="img/user.png" alt="" />
+      </div>
+      <div class="post__body">
+        <div class="post__header">
+          <div class="post__headerText">
+            <h3>
+              Oscar Echeverry
+              <span class="post__headerSpecial"><span class="material-icons post__badge"> verified
+                </span>@oscarecheverry</span>
+            </h3>
+          </div>
+          <div class="post__headerDescription">
+            <p id="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <!-- <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg" alt="" /> -->
+        <!-- <img id="post-image" src="" alt="" style="display: none;" /> -->
+        <div class="post__footer">
+          <a href=""><i class="fa-solid fa-thumbs-up fa-bounce" style="color: #74C0FC;"></i></a>
+          <a href=""><i class="fa-solid fa-comments fa-flip" style="color: #74C0FC;"></i></a>
+          <a href=""><i class="fa-solid fa-share-from-square fa-fade" style="color: #74C0FC;"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
